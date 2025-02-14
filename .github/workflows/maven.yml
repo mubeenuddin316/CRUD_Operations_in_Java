@@ -1,9 +1,6 @@
 name: Maven Build and Deploy
 
-on:
-  push:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
   build:
@@ -22,10 +19,26 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
 
-    - name: Debug: List Target Directory
-      run: ls -R target
+    - name: Upload WAR file as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: war-file
+        path: target/*.war
 
-    - name: Build Docker Image
-      run: docker build -t my-java-app .
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
-    - name: Debug: Run Docker Container
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Download built WAR file
+      uses: actions/download-artifact@v3
+      with:
+        name: war-file
+        path: target/
+
+    - name: Build and Push Docker Image
+      run: |
+        docker build -t my-app .
