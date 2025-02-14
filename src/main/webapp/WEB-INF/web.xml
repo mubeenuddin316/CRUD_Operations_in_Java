@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>ServLet</servlet-name>
+  	<display-name>ServLet</display-name>
+  	<description></description>
+  	<servlet-class>pack1.ServLet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FullDServlet</servlet-name>
+  	<display-name>FullDServlet</display-name>
+  	<description></description>
+  	<servlet-class>pack1.FullDServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>insertServlet</servlet-name>
+  	<display-name>insertServlet</display-name>
+  	<description></description>
+  	<servlet-class>pack1.insertServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DelRecServlet</servlet-name>
+  	<display-name>DelRecServlet</display-name>
+  	<description></description>
+  	<servlet-class>pack1.DelRecServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>updateServlet</servlet-name>
+  	<display-name>updateServlet</display-name>
+  	<description></description>
+  	<servlet-class>pack1.updateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ServLet</servlet-name>
+  	<url-pattern>/ServLet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FullDServlet</servlet-name>
+  	<url-pattern>/FullDServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>insertServlet</servlet-name>
+  	<url-pattern>/insertServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DelRecServlet</servlet-name>
+  	<url-pattern>/DelRecServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>updateServlet</servlet-name>
+  	<url-pattern>/updateServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
