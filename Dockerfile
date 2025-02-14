@@ -1,8 +1,9 @@
-# Use Tomcat as base image
-FROM tomcat:9.0
+# Dockerfile in your GitHub repo
+FROM tomcat:10.1.34-jdk23
 
-# Copy the WAR file into Tomcat's webapps folder
+# Copy your WAR file into Tomcat (inside the container)
 COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# Start Tomcat
+# Start Tomcat when the container launches
 CMD ["catalina.sh", "run"]
+
