@@ -12,10 +12,17 @@ import java.sql.PreparedStatement;
 
 public class servDAO {
 	
+    // public static Connection getConnection() throws ClassNotFoundException, SQLException {
+    //     Class.forName("com.mysql.cj.jdbc.Driver");  // method to get connection
+    //     return DriverManager.getConnection("jdbc:mysql://localhost:3306/srdb5", "root", "root");
+    // }
+
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");  // method to get connection
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/srdb5", "root", "root");
-    }
+   	 	Class.forName("org.sqlite.JDBC");  // Load SQLite driver
+    		return DriverManager.getConnection("jdbc:sqlite:database.db"); // Path to SQLite DB file
+	}
+
+
 
     public ArrayList<servDTO> getData() throws ClassNotFoundException, SQLException {
         ArrayList<servDTO> dataList = new ArrayList<>();
